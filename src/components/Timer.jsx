@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from 'prop-types';
 
-const startingvalue = 70;
-
-export default function Timer() {
-
-  const [counter, setCounter] = useState(startingvalue);
+export default function Timer(props) {
+  const [counter, setCounter] = useState(props.startCountSec);
   const [runTimer, setRunTimer] = useState(false);
   const [buttonState, setButtonState] = useState("Start");
 
@@ -21,7 +19,7 @@ export default function Timer() {
   }
   function handleReset () {
     setRunTimer(false);
-    setCounter(startingvalue);
+    setCounter(props.startCountSec);
     setButtonState("Start");
   }
 
@@ -42,4 +40,11 @@ export default function Timer() {
       </div>
     </div>
   );
+}
+
+Timer.propTypes = {
+  startCountSec: PropTypes.number
+}
+Timer.defaultProps = {
+  startCountSec: 90
 }
