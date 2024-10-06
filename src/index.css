@@ -1,13 +1,34 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  margin:0px;
+  padding:0px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#wrapper{
+  height: 100vh;
+  width: 100vw;
+
+  color:white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("D:\M1_CodeLibrary\1_projects_s1_m1\cozy-timer\public\assets\background\peakpxB80.jpg");
+  background-size: cover;
+} 
+#timer-countdown {
+  width:75vw;
+  display: flex;
+  justify-content: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 150px;
+}
+#timer-controls{
+  width:75vw;
+  display: flex;
+  justify-content: center;
 }

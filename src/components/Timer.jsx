@@ -32,8 +32,10 @@ export default function Timer(props) {
 
   return (
     <div id="timer">
-      {Math.floor(counter / 60)} :{" "}
-      {counter % 60 < 10 ? "0" + (counter % 60) : counter % 60}
+      <div id="timer-countdown">
+        {Math.floor(counter / 60)}:
+        {counter % 60 < 10 ? "0" + (counter % 60) : counter % 60}
+      </div>
       <div id="timer-controls">
         <button onClick={handleControl}>{buttonState}</button>
         <button onClick={handleReset}>Reset</button>
@@ -46,5 +48,5 @@ Timer.propTypes = {
   startCountSec: PropTypes.number
 }
 Timer.defaultProps = {
-  startCountSec: 90
+  startCountSec: 1800
 }
