@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
+    margin:0px;
+    padding:0px;
+}#popup-frame{
+    position: absolute;
+    left: 20vw;
+    top: 20vh;
+    z-index: 100;
+    height:60vh;
+    width:60vw;
+    background-color: #352F44;
+    border-radius: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap:5%;
+
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 50px;
+}
+#popup-frame>#greeting{
+    margin: 30px;
+}
+#popup-frame>#popup-controls{
+    width: 100%;
+    display: flex;
+    justify-content: space-around   ;
+}
+#popup-frame>#popup-controls>button{
+    width:auto;
+    height: auto;
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px;
+  
+    font-family: "Space Grotesk", sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1.2rem;
+    color: rebeccapurple;
+}

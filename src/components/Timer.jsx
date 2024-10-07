@@ -25,7 +25,7 @@ export default function Timer(props) {
 
   useEffect(() => {
     const timer = runTimer && setInterval(() => {
-      counter > 0 && setCounter(counter - 1);
+      counter > 0 ? setCounter(counter - 1) : props.handleTimerEnd()
       }, 1000);
       return () => clearInterval(timer);
   }, [counter,runTimer]);
