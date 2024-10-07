@@ -40,6 +40,7 @@ function App() {
       isPopup={isPopup}
       setFocus={setFocus}
       setRest={setRest}
+      timerType={timerType}
       />
     </div>
   );
