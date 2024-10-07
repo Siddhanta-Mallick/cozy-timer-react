@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 *{
   margin:0px;
   padding:0px;
@@ -15,6 +16,18 @@
 }
 #timer{
   z-index: -1;
+}
+#timer-type{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 25px;
+  font-style: normal; 
+
 }
 #timer-countdown {
   width:100vw;

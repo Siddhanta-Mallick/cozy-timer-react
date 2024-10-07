@@ -2,51 +2,49 @@ import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 
 export default function Timer(props) {
-  const [counter, setCounter] = useState(props.startCountSec);
-  const [runTimer, setRunTimer] = useState(false);
-  const [buttonState, setButtonState] = useState("Start");
 
   function handleControl () {
     //Starting / Stopping the timer
-    setRunTimer(!runTimer);
-
+    props.setRunTimer(!props.runTimer);
     //Changing button text based on timer state
-    if (runTimer) {
-      setButtonState("Resume");
+    if (props.runTimer) {
+      props.setButtonState("Resume");
     } else {
-      setButtonState("Pause");
+      props.setButtonState("Pause");
     }
   }
   function handleReset () {
-    setRunTimer(false);
-    setCounter(props.startCountSec);
-    setButtonState("Start");
+    props.setRunTimer(false);
+    props.setCounter( props.timerType === "Focus" ? 1800 : 300 );
+    props.setButtonState("Start");
   }
 
   useEffect(() => {
-    const timer = runTimer && setInterval(() => {
-      counter > 0 ? setCounter(counter - 1) : props.handleTimerEnd()
+    //TODO : Add bell chime after timer ends
+    const timer = props.runTimer && setInterval(() => {
+      props.counter > 0 ? props.setCounter(props.counter - 1) : props.handleTimerEnd()
       }, 1000);
       return () => clearInterval(timer);
-  }, [counter,runTimer]);
+  }, [props.counter,props.runTimer]);
 
   return (
     <div id="timer">
+      <div id="timer-type">{props.timerType}</div>
       <div id="timer-countdown">
-        {Math.floor(counter / 60)}:
-        {counter % 60 < 10 ? "0" + (counter % 60) : counter % 60}
+        {Math.floor(props.counter / 60)}:
+        {props.counter % 60 < 10 ? "0" + (props.counter % 60) : props.counter % 60}
       </div>
       <div id="timer-controls">
-        <button onClick={handleControl}>{buttonState}</button>
+        <button onClick={handleControl}>{props.buttonState}</button>
         <button onClick={handleReset}>Reset</button>
       </div>
     </div>
   );
 }
-
-Timer.propTypes = {
-  startCountSec: PropTypes.number
-}
-Timer.defaultProps = {
-  startCountSec: 1800
-}
+//TODO : Set default proptypes here later
+// Timer.propTypes = {
+//   counter: PropTypes.number
+// }
+// Timer.defaultProps = {
+//   counter: 1800
+// }
