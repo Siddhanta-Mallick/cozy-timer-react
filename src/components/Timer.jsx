@@ -21,6 +21,7 @@ export default function Timer(props) {
 
   useEffect(() => {
     //TODO : Add bell chime after timer ends
+    //TODO : deal with props warning
     const timer = props.runTimer && setInterval(() => {
       props.counter > 0 ? props.setCounter(props.counter - 1) : props.handleTimerEnd()
       }, 1000);
