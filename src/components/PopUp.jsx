@@ -1,9 +1,11 @@
 import React from "react";
 import "../Styles/PopUp.component.css";
+import ding from "../ding.mp3"
 export default function PopUp(props) {
     if(!props.isPopup) {
         return null;
     } else {
+        new Audio(ding).play();
         return (
             <div id="popup-frame">
                 <div id="greeting">

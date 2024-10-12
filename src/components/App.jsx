@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Timer from "./Timer";
 import PopUp from "./PopUp";
 function App() {
-  const [counter, setCounter] = useState(3);
+  const [counter, setCounter] = useState(1500);
   const [timerType, setTimerType] = useState("Focus");
   const [runTimer, setRunTimer] = useState(false);
   const [buttonState, setButtonState] = useState("Start");
