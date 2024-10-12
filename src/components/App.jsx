@@ -10,15 +10,17 @@ function App() {
 
   function handleTimerEnd () {
       timerType === "Focus" ? setTimerType("Rest") : setTimerType("Focus");
-      setIsPopup(true);
+      setIsPopup(true); 
   }
   function setFocus () {
+    setTimerType("Focus")
     setCounter(1800)
     setIsPopup(false);
     setRunTimer(false);
     setButtonState("Start");
   }
   function setRest () {
+    setTimerType("Rest")
     setCounter(300);
     setIsPopup(false);
     setRunTimer(false);
